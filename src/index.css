@@ -1,8 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +14,24 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.fj-text-lgrey{
+  color: var(--fj-text-lgrey);
+}
+
+.fj-text-dgrey{
+  color: var(--fj-text-dgrey);
+}
+
+.fj-border-b{
+  border-bottom: 1px solid #e1e3e6 !important;
+}
+
+.fj-border-t{
+  border-top: 1px solid #e1e3e6 !important;
+}
+
+.fj-border-f{
+  border: 1px solid #e1e3e6 !important;
 }
