@@ -1,14 +1,16 @@
 import React from "react";
 
 import CreditAdvisor from "../components/CreditAdvisor";
-import TipologiaTasso from "../components/TipologiaTasso";
+import TipologiaTasso from "../components/Sezione_SceltaTipoligia";
+import Mutui from "../components/Sezione_OpzioniMutui";
+import Recap from "../components/Sezione_Recap";
 
 function MainPage() {
   var clientName = "Mario";
 
   return (
-    <div className="flex justify-center w-full pt-10">
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-4 lg:w-9/12 md:w-full mx-auto">
+    <div className="flex justify-center w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-4 lg:w-9/12 md:w-full mx-auto my-10">
         <div className="leftSidePanel">
           {/* AGENT CARD */}
           <div className="col-span-1 sm:col-span-1 rounded-md shadow fj-border-f bg-white">
@@ -89,13 +91,24 @@ function MainPage() {
             />
           </div>
         </div>
-
         <div className="rightSidePanel col-span-2 sm:col-span-2">
           <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">
             <TipologiaTasso />
           </div>
 
-          <div className="shadow fj-border-f bg-white rounded-md p-4">bbb</div>
+          <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">
+            <Mutui clientName={clientName} />
+          </div>
+
+          <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">
+            <Recap progress={2} />
+          </div>
+
+          <div className="mx-20 text-center text-xs text-gray-500">
+            <p>
+              Il risultato della stima è indicativo. Il tasso indicato corrisponde al tasso più basso tra i prodotti di mutuo delle banche convenzionate di Mutuiamo s.r.l. I dati finanziari effettivi saranno confermati dai singoli istituti di credito al momento della stipula. Questa stima non ha nessun valore ai fini della concessione del mutuo.
+            </p>
+          </div>
         </div>
       </div>
     </div>
