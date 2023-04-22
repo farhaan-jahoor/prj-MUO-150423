@@ -101,7 +101,7 @@ function MainPage() {
           </div>
 
           <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">
-            <Recap progress={2} />
+            <Recap />
           </div>
 
           <div className="mx-20 text-center text-xs text-gray-500">
