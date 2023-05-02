@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import CreditAdvisor from "../components/CreditAdvisor";
 import TipologiaTasso from "../components/Sezione_SceltaTipoligia";
@@ -7,6 +7,12 @@ import Recap from "../components/Sezione_Recap";
 
 function MainPage() {
   var clientName = "Mario";
+  
+  
+  const [isFisso, setIsFisso] = useState(true)
+  const [importoMutuo, setImportoMutuo] = useState(100000)
+  const [valoreImmobile, setValoreImmobile] = useState(200000)
+  const [selectedYear, setSelectedYear] = useState(25)
 
   return (
     <div className="flex justify-center w-full">
@@ -93,11 +99,25 @@ function MainPage() {
         </div>
         <div className="rightSidePanel col-span-2 sm:col-span-2">
           <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">
-            <TipologiaTasso />
+            <TipologiaTasso 
+              isFisso={isFisso} 
+              setIsFisso={setIsFisso} 
+              importoMutuo={importoMutuo} 
+              setImportoMutuo={setImportoMutuo} 
+              valoreImmobile={valoreImmobile} 
+              setValoreImmobile={setValoreImmobile} 
+              selectedYear={selectedYear} 
+              setSelectedYear={setSelectedYear} 
+            />
           </div>
 
           <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">
-            <Mutui clientName={clientName} />
+            <Mutui 
+              clientName={clientName}
+              isFisso={isFisso}
+              importoMutuo={importoMutuo}
+              selectedYear={selectedYear}
+            />
           </div>
 
           <div className="shadow fj-border-f bg-white rounded-md p-4 mb-5">

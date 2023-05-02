@@ -3,13 +3,10 @@ import Tooltip from './Tooltip'
 
 import CircleInfo from '../resources/img/info-ico.svg'
 
-function TipologiaTasso() {
-  const [isFisso, setIsFisso] = useState(true)
+function TipologiaTasso({isFisso, setIsFisso, importoMutuo, setImportoMutuo, valoreImmobile, setValoreImmobile, selectedYear, setSelectedYear}) {
+
   const [livelloSostenibilita, setLivelloSostenibilita] = useState(2)
-  const [importoMutuo, setImportoMutuo] = useState(100000)
-  const [valoreImmobile, setValoreImmobile] = useState(200000)
   const [percentImmobile, setPercentImmobile] = useState(0)
-  const [selectedYear, setSelectedYear] = useState(25)
   const [importoInt, setImportoInt] = useState(0)
   const [importoDec, setImportoDec] = useState(0)
 
@@ -205,8 +202,10 @@ function TipologiaTasso() {
                 -
               </button>
               <button
-                className='w-12 h-12 rounded-full bg-[#eeeff1] text-black flex items-center justify-center hover:bg-[#cfcfcf] focus:outline-none ml-2 text-4xl'
+                id="increaseLoanAmount"
+                className={`w-12 h-12 rounded-full flex items-center justify-center focus:outline-none ml-2 text-4xl bg-[#eeeff1] ${importoMutuo < valoreImmobile ? 'text-black  hover:bg-[#cfcfcf]' : 'text-[#cfcfcf]'} `}
                 onClick={() => handleImportoMutuo(0)}
+                disabled={ importoMutuo < valoreImmobile ? false : true}
               >
                 +
               </button>
